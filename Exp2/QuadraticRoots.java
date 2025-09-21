@@ -1,16 +1,33 @@
 import java.util.Scanner;
 
-class Vowelprg {
+class QuadraticRoots {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter letter: ");
-        char input = scan.next().toLowerCase().charAt(0);
-        
-        if (input == 'a' || input == 'e' || input == 'i' || input == 'o' || input == 'u') {
-            System.out.println("Entered character is a vowel");
+        System.out.print("enter a: ");
+        double a = scan.nextDouble();
+        System.out.print("enter b: ");
+        double b = scan.nextDouble();
+        System.out.print("enter c: ");
+        double c = scan.nextDouble();
+        double d = b*b - 4*a*c;
+
+        if (d> 0) {
+            double r1 = (-b + Math.sqrt(d))/(2*a);
+            double r2 = (-b - Math.sqrt(d))/(2*a);
+            System.out.println("two real and distinct roots:");
+            System.out.println("root 1 = " + r1);
+            System.out.println("root 2 = " + r2);
+        } else if (d == 0) {
+            double r = -b / (2*a);
+            System.out.println("two real and equal roots:");
+            System.out.println("root = " + r);
         } else {
-            System.out.println("A consonant");
+            double rp = -b/(2*a);
+            double ip = Math.sqrt(-d) / (2*a);
+            System.out.println("Complex roots:");
+            System.out.println("root 1 = " + rp + " + " + ip + "i");
+            System.out.println("root 2 = " + rp + " - " + ip + "i");
         }
-         System.out.println("Shaksham 24csu189");
+        System.out.println("Shaksham 24csu189");
 }
 }
